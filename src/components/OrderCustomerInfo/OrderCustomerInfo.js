@@ -30,17 +30,26 @@ class OrderCustomerInfo extends Component {
         }
     }
 
+    submitForm = (event) => {
+        event.preventDefault();
+        const action = { type: 'SUBMIT_CUSTOMER_INFO', payload: this.state };
+        this.props.dispatch(action);
+        
+    }
+    
+
     render() {
         console.log(this.state);
         return (
-            <form>
+            <form onSubmit={this.submitForm}>
                 <label htmlFor="customer_name">
                     Name
                 </label>
                 <input type="text"
                     id="customer_name"
                     placeholder="Name"
-                    onChange={this.handleChange}>
+                    onChange={this.handleChange}
+                    required>
                 </input>
                 <br />
 
@@ -50,7 +59,8 @@ class OrderCustomerInfo extends Component {
                 <input type="text"
                     id="street_address"
                     placeholder="Address"
-                    onChange={this.handleChange}>
+                    onChange={this.handleChange}
+                    required>
                 </input>
                 <br />
 
@@ -60,7 +70,8 @@ class OrderCustomerInfo extends Component {
                 <input type="text"
                     id="city"
                     placeholder="City"
-                    onChange={this.handleChange}>
+                    onChange={this.handleChange}
+                    required>
                 </input>
                 <br />
 
@@ -70,13 +81,15 @@ class OrderCustomerInfo extends Component {
                 <input type="number"
                     id="zip"
                     placeholder="Zip"
-                    onChange={this.handleChange}>
+                    onChange={this.handleChange}
+                    required>
                 </input>
 
                 <input type="radio"
                     id="pickupId"
                     name="orderType"
-                    onChange={this.handleChange}>
+                    onChange={this.handleChange}
+                    required>
                 </input>
                 <label htmlFor="pickupId">
                     Pick up
@@ -90,6 +103,7 @@ class OrderCustomerInfo extends Component {
                 <label htmlFor="deliveryId">
                     Delivery
                 </label>
+                <button type ="submit">Submit</button>
 
             </form>
         )

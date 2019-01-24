@@ -29,10 +29,10 @@ const pizzaOrder = (state = [], action) => {
 }
 
 //This reducer will run when we are in our Order Checkout component
-const customerInfo = (state = [], action) => {
+const customerInfo = (state = null, action) => {
     if (action.type === "SUBMIT_CUSTOMER_INFO") {
         //update this too
-        return state;
+        return {...state, ...action.payload};
     } else if (action.type === "UPDATE_TOTAL") {
         //the person working on this is free to update it
         return state;
