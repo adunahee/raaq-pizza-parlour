@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import './App.css';
-import OrderCustomerInfo from './../OrderCustomerInfo/OrderCustomerInfo.js';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+
+import './App.css';
+import AdminOrders from '../AdminOrders/AdminOrders.js';
 import Header from '../Header/Header.js';
+import OrderCustomerInfo from './../OrderCustomerInfo/OrderCustomerInfo.js';
 
 //Remeber to import your components
 
@@ -33,13 +34,14 @@ class App extends Component {
             {/* write in your order checkout route */}
 
             {/* write in your admin order route */}
+            <Route exact path="/admin" component={AdminOrders} />
           </div>
         </Router>
 
 
-        <br />
+        {/* <br />
         <img src="images/pizza_photo.png" />
-        <p>Pizza is great.</p>
+        <p>Pizza is great.</p> */}
       </div>
     );
   }
