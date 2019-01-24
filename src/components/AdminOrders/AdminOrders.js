@@ -54,8 +54,7 @@ class AdminOrders extends Component {
         );
     }
 }
-{/* {JSON.stringify(this.state.orders)}
-                <p>[AdminOrders]</p> */}
+
 const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore: reduxStore
 });
