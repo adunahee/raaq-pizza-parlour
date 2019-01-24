@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import OrderCustomerInfo from './../OrderCustomerInfo/OrderCustomerInfo.js';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import Header from '../Header/Header.js';
 
 //Remeber to import your components
 
@@ -10,9 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Prime Pizza</h1>
-        </header>
+        <Header />
 
         {/* HasRouter */}
         <Router>
@@ -36,10 +35,10 @@ class App extends Component {
             {/* write in your admin order route */}
           </div>
         </Router>
-        
 
-        <br/>
-        <img src="images/pizza_photo.png"/>
+
+        <br />
+        <img src="images/pizza_photo.png" />
         <p>Pizza is great.</p>
       </div>
     );
