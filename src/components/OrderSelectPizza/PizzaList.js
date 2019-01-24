@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
+import PizzaItem from './PizzaItem.js'
 
 class PizzaList extends Component {
     componentDidMount() {
@@ -18,9 +19,18 @@ class PizzaList extends Component {
     }
     render() {
         return (
-            <ul></ul>
+            <ul>
+                {/* {JSON.stringify(this.props.reduxStore.pizzaNames)} */}
+                {this.props.reduxStore.pizzaNames.map((pizza, i) =>{
+                    return (<PizzaItem key={i} pizza={pizza} />)
+                })} 
+            </ul>
         )
     }
 }
 
-export default connect()(PizzaList);
+const mapReduxStateToProps = (reduxStore) => ({
+    reduxStore
+})
+
+export default connect(mapReduxStateToProps)(PizzaList);

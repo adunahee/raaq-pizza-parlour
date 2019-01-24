@@ -11,7 +11,10 @@ import logger from 'redux-logger';
 //This reducer runs when we are in our Pizza List component
 const pizzaNames = (state = [], action) => {
     if (action.type === "SET_PIZZA_LIST") {
+        console.log('in pizzanames');
+        
         return action.payload;
+
     }
     return state;
 }
