@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 import OrderCustomerInfo from './../OrderCustomerInfo/OrderCustomerInfo.js';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
-
+import OrderSelectPizza from '../OrderSelectPizza/OrderSelectPizza.js'
 //Remeber to import your components
 
 class App extends Component {
@@ -18,6 +18,9 @@ class App extends Component {
         <Router>
           <div>
             {/* write in your order select pizza link */}
+            <Link to="/order-select-pizza">Order Select Pizza</Link>
+            <Route exact path="/order-select-pizza" component={OrderSelectPizza} />
+            
 
             {/* write in your order customer info link */}
             <Link to="/order-customer-info">Order Customer Info</Link>
