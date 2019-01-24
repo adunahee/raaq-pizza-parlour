@@ -17,14 +17,25 @@ class PizzaList extends Component {
             console.log('error in GET', error)
         })
     }
+
+    handleNextButton = (event) => {
+        // console.log(this.props);
+        // console.log(this.props.history);
+        
+        this.props.history.push('/order-customer-info');
+    }
+
     render() {
         return (
-            <ul>
-                {/* {JSON.stringify(this.props.reduxStore.pizzaNames)} */}
-                {this.props.reduxStore.pizzaNames.map((pizza, i) =>{
-                    return (<PizzaItem key={i} pizza={pizza} />)
-                })} 
-            </ul>
+            <div>
+                <ul>
+                    {/* {JSON.stringify(this.props.reduxStore.pizzaNames)} */}
+                    {this.props.reduxStore.pizzaNames.map((pizza, i) =>{
+                        return (<PizzaItem key={i} pizza={pizza} />)
+                    })} 
+                </ul>
+                <button onClick={this.handleNextButton}>Next</button>
+            </div>
         )
     }
 }

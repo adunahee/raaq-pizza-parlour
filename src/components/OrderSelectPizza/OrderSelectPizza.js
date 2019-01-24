@@ -5,7 +5,7 @@ class OrderSelectPizza extends Component {
     render() {
         return(
             <div>
-                <PizzaList />
+                <PizzaList history={this.props.history}/>
             </div>
         )
 
