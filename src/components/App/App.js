@@ -9,6 +9,13 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Prime Pizza</h1>
         </header>
+
+        {/* HasRouter */}
+
+        {/* Nav Links */}
+
+        {/* Routes */}
+
         <br/>
         <img src="images/pizza_photo.png"/>
         <p>Pizza is great.</p>
