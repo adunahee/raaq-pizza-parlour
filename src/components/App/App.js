@@ -4,6 +4,7 @@ import './App.css';
 import OrderCustomerInfo from './../OrderCustomerInfo/OrderCustomerInfo.js';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Header from '../Header/Header.js';
+import OrderSelectPizza from '../OrderSelectPizza/OrderSelectPizza.js'
 
 //Remeber to import your components
 

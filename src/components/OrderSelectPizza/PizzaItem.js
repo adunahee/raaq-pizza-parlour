@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 class PizzaItem extends Component {
+    addToOrder = () => {
+        console.log('add pressed');
+        
+    }
     render() {
         return (
             <div>
@@ -10,7 +14,7 @@ class PizzaItem extends Component {
                 <li>{this.props.pizza.description}</li>
                 
                 <li>{this.props.pizza.price}</li>
-                <li><button>Add</button></li>
+                <li><button onClick={this.addToOrder}>Add</button></li>
                 <li><button>Remove</button></li>
             </div>
         )
