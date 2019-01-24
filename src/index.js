@@ -27,7 +27,7 @@ const pizzaOrder = (state = [], action) => {
     } else if (action.type === "REMOVE_PIZZA") {
         //delete a pizza from the cart by filtering.
         return state.filter((pizza) => {
-            if (pizza.pizza_id != action.payload.pizza_id) {
+            if (pizza.pizza_id !== action.payload.pizza_id) {
                 return pizza;
             }
         });
