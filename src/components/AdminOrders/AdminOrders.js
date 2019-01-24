@@ -17,11 +17,12 @@ class AdminOrders extends Component {
 
     // Request all previous orders from the server (via route /api/order GET)
     getOrders = () => {
-        console.log('getOrders()');
-        axios.get('/api/order', (response) => {
-            console.log(response);
+        axios({
+            method:'GET',
+            url:'/api/order',
+         }).then( (response) => {    
             this.setState({
-                orders: response,
+                orders: response.data,
             });
         }).catch((error) => {
             const errorMessage = `Server Error: ${error}`;
