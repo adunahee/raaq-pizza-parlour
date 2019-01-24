@@ -25,12 +25,18 @@ const pizzaOrder = (state = [], action) => {
         //add pizza to cart.
         return [...state, action.payload];
     } else if (action.type === "REMOVE_PIZZA") {
-        //delete a pizza from the cart by filtering.
-        return state.filter((pizza) => {
-            if (pizza.pizza_id !== action.payload.pizza_id) {
-                return pizza;
+        let keptPizza = [];
+        let foundFirst = false;
+        for (const pizza of state) {
+
+            if (pizza != action.payload || foundFirst) {
+                keptPizza.push(pizza);
+            } else {
+                foundFirst = true;
             }
-        });
+            
+        }
+        return keptPizza
     }
     return state;
 }
@@ -47,12 +53,23 @@ const customerInfo = (state = null, action) => {
     return state;
 }
 
+const totalPrice = (state = 0, action) => {
+    if(action.type === "ADD_PIZZA") {
+        return state += Number(action.payload.price);
+    } else if (action.type === "REMOVE_PIZZA") {
+        return state -= Number(action.payload.price);
+    }
+
+    return state;
+} 
+
 // The store is the big JavaScript Object that holds all of the information for our application
 const storeInstance = createStore(
     combineReducers({
         pizzaNames,
         pizzaOrder,
         customerInfo,
+        totalPrice,
     }),
     applyMiddleware(logger),
 );

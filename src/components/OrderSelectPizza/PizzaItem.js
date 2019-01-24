@@ -13,6 +13,14 @@ class PizzaItem extends Component {
         const action = {type: 'REMOVE_PIZZA', payload: this.props.pizza}
         this.props.dispatch(action)
     }
+
+    // will create new reducer to keep current total - and then will create component Class total 
+    //that will only display total that can be imported to other pages   
+    //     totalPrice = () => {
+    //     const action = {type: 'UPDATE_TOTAL', payload: this.props.pizza.price}
+    //     this.props.dispatch(action)
+    // }
+
     render() {
         return (
             <div>
