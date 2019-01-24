@@ -34,6 +34,8 @@ class OrderCustomerInfo extends Component {
         event.preventDefault();
         const action = { type: 'SUBMIT_CUSTOMER_INFO', payload: this.state };
         this.props.dispatch(action);
+        //submitting to the reducer
+        this.props.history.push('/order-checkout');
         
     }
     
