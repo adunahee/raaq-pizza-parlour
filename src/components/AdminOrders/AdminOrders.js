@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import AdminTableRow from '../AdminTableRow/AdminTableRow.js';
 
 class AdminOrders extends Component {
     constructor(props) {
@@ -33,15 +34,28 @@ class AdminOrders extends Component {
 
     // Display this component
     render() {
+        const orders = this.state.orders;
         return (
-            <div>
-                {JSON.stringify(this.state.orders)}
-                <p>[AdminOrders]</p>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Time Order Placed</th>
+                        <th>Type</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {orders.map(
+                        (order) => <AdminTableRow key={order.id} order={order} />
+                    )}
+                </tbody>
+            </table>
         );
     }
 }
-
+{/* {JSON.stringify(this.state.orders)}
+                <p>[AdminOrders]</p> */}
 const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore: reduxStore
 });
