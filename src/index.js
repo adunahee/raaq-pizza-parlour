@@ -22,11 +22,15 @@ const pizzaNames = (state = [], action) => {
 //This reducer will run when Order Select Pizza > Pizza List > Pizza Item
 const pizzaOrder = (state = [], action) => {
     if (action.type === "ADD_PIZZA") {
-        //update this with state + next pizza
-        return state;
+        //add pizza to cart.
+        return [...state, action.payload];
     } else if (action.type === "REMOVE_PIZZA") {
-        //update this 
-        return state;
+        //delete a pizza from the cart by filtering.
+        return state.filter((pizza) => {
+            if (pizza.pizza_id != action.payload.pizza_id) {
+                return pizza;
+            }
+        });
     }
     return state;
 }
