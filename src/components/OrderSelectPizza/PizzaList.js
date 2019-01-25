@@ -19,9 +19,6 @@ class PizzaList extends Component {
     }
 
     handleNextButton = (event) => {
-        // console.log(this.props);
-        // console.log(this.props.history);
-        
         this.props.history.push('/order-customer-info');
     }
 
@@ -29,7 +26,6 @@ class PizzaList extends Component {
         return (
             <div>
                 <ul>
-                    {/* {JSON.stringify(this.props.reduxStore.pizzaNames)} */}
                     {this.props.reduxStore.pizzaNames.map((pizza, i) =>{
                         return (<PizzaItem key={i} pizza={pizza} />)
                     })} 

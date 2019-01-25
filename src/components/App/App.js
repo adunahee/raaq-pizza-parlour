@@ -14,7 +14,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+
+       
 
         {/* HasRouter */}
         <Router>
@@ -25,6 +26,7 @@ class App extends Component {
             <Link to="/order-checkout">Confirm Checkout</Link>
 
             {/* Routes */}
+            <Route path='/' component={Header} />
             <Route exact path="/order-select-pizza" component={OrderSelectPizza} />
             <Route exact path="/order-customer-info" component={OrderCustomerInfo} />
             <Route exact path="/order-checkout" component={OrderCheckout} />

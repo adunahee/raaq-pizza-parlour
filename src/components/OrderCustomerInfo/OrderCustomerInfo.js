@@ -10,9 +10,7 @@ class OrderCustomerInfo extends Component {
         }
     }
     handleChange = (event) => {
-        console.log(event.target.id);
         let key = event.target.id;
-        console.log(event.target.value);
         let value = event.target.value;
         if (key === 'pickupId') {
             this.setState({
@@ -41,7 +39,6 @@ class OrderCustomerInfo extends Component {
     
 
     render() {
-        console.log(this.state);
         return (
             <form onSubmit={this.submitForm}>
                 <label htmlFor="customer_name">

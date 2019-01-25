@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 
 class DeliveryInfo extends Component {
     render() {
-
-        console.log(this.props.reduxStore.customerInfo);
         return (
                 <div>
                     <p>{this.props.reduxStore.customerInfo.customer_name}</p>

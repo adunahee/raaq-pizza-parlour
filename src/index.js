@@ -29,7 +29,7 @@ const pizzaOrder = (state = [], action) => {
         let foundFirst = false;
         for (const pizza of state) {
 
-            if (pizza != action.payload || foundFirst) {
+            if (pizza !== action.payload || foundFirst) {
                 keptPizza.push(pizza);
             } else {
                 foundFirst = true;
