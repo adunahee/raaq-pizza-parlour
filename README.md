@@ -2,6 +2,9 @@
 
 Before you get started make sure to read through **ALL** requirements and outline a plan for your group. Assign out tasks and use branches to allow team members to work in parallel.
 
+**get everyone up to date with dependencies 
+
+
 ### Setup
 
 Server side code for baseline functionality has been provided for you. Each member of your team will need to create a `pizza_parlor` database.
