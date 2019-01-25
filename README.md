@@ -1,7 +1,8 @@
 # RAAQ Pizza Parlour
 
-
 ## Prerequisites/Software Used
+
+### Setup
 
 - Node.js
 - Postico
