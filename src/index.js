@@ -23,7 +23,9 @@ const pizzaNames = (state = [], action) => {
 const pizzaOrder = (state = [], action) => {
     if (action.type === "ADD_PIZZA") {
         //add pizza to cart.
-        return [...state, action.payload];
+        const newPayload = action.payload
+        newPayload.quantity = 1
+        return [...state, newPayload];
     } else if (action.type === "REMOVE_PIZZA") {
         let keptPizza = [];
         let foundFirst = false;

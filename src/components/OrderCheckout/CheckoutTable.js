@@ -24,7 +24,7 @@ class CheckoutTable extends Component {
                 <tfoot>
                     <tr>
                         <td>Total</td>
-                        <td>your total here</td>
+                        <td>{this.props.reduxStore.totalPrice}</td>
                     </tr>
                 </tfoot>
             </table>
