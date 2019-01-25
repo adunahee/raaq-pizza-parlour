@@ -8,7 +8,7 @@ class AdminTableRow extends Component {
                 <td>{order.customer_name}</td>
                 <td>{order.time}</td>
                 <td>{order.type}</td>
-                <td>{order.cost}</td>
+                <td>{order.total}</td>
             </tr>
         );
     }
