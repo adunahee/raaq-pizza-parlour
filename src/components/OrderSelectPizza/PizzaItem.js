@@ -24,7 +24,7 @@ class PizzaItem extends Component {
     render() {
         return (
             <div>
-                <li><igm src={this.props.pizza.image_path} /></li>
+                <li><img src={this.props.pizza.image_path} /></li>
                 <li>{this.props.pizza.name}</li>
                 <li>{this.props.pizza.description}</li>
                 
